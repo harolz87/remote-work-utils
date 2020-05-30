@@ -9,5 +9,5 @@ npm-debug.log
 yarn-error.log
 *.log
 .nvm
-/bots/node_modules/
-/package-lock.json
+front/bots/node_modules/
+front/package-lock.json
