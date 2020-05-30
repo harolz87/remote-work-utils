@@ -6,6 +6,16 @@ import {
 
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
+import { persistReducer, persistStore } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: [
+    'global',
+  ],
+};
 
 
 export default ({ reducers }) => {
@@ -19,7 +29,11 @@ export default ({ reducers }) => {
 
   enhancers.push(applyMiddleware(...middleware));
 
-  const store = createStore(reducers, compose(...enhancers));
+  const persistedReducer = persistReducer(persistConfig, reducers);
 
-  return { store };
+  const store = createStore(persistedReducer, compose(...enhancers));
+
+  const persistor = persistStore(store);
+
+  return { store, persistor };
 };
