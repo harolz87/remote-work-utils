@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
+import Button from 'react-bootstrap/Button';
 import { useActions } from '../hooks/useActions';
 
 import { FormLogin } from '../components/FormLogin';
@@ -32,21 +33,26 @@ const Login = ({ history }) => {
     >
       <Input
         type="text"
-        label="User name"
-        placeholder="User name"
+        label="Email address"
+        placeholder="Email address"
         value={userName}
         onChange={(event) => loginService.changeUser({ event, actions })}
       />
       <Input
         type="password"
-        label="password"
-        placeholder="password"
+        label="Password"
+        placeholder="Password"
         value={userPass}
         onChange={(event) => loginService.changePass({ event, actions })}
       />
-      <SummitButton>
-        intro
-      </SummitButton>
+      <div className="d-flex justify-content-center my-5">
+        <SummitButton className="w-25">
+          Login
+        </SummitButton>
+        <Button variant="link" className="w-25">
+          Forgot password?
+        </Button>
+      </div>
     </FormLogin>
   );
 };
