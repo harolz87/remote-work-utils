@@ -19,8 +19,11 @@ export const GlobalStyles = createGlobalStyle`
     background: #fefefe;
     height: 100%;
     margin: 0 auto;
-    max-width: 95%;
     overscroll-behavior: none;
-    width: 100%; 
+    width: 100%;
+    background-image: url('public/images/background.svg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
   }
 `;
