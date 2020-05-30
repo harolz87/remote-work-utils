@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { GlobalStyles } from './styles/GlobalStyles';
 import reducers from './reducers';
 import getStore from './store/getStore';
+import { Alert } from './containers/Alert';
 
 
 const { store } = getStore({ reducers });
@@ -14,6 +15,7 @@ export default () => (
     <Suspense fallback={<div>Loading...</div>}>
       <GlobalStyles />
       <Routes />
+      <Alert />
     </Suspense>
   </Provider>
 );

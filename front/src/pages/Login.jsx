@@ -7,13 +7,18 @@ import { Input } from '../components/Input';
 import { SummitButton } from '../components/SummitButton';
 
 import * as loginActions from '../actions/login.actions';
+import { openAlert } from '../actions/alert.actions';
 import * as loginService from '../services/login.service';
 
+const newloginActions = {
+  ...loginActions,
+  openAlert,
+};
 
 const Login = () => {
   const userName = useSelector((state) => state.login.userName);
   const userPass = useSelector((state) => state.login.userPass);
-  const actions = useActions(loginActions);
+  const actions = useActions(newloginActions);
 
   return (
     <FormLogin onSubmit={(event) => loginService.login({
