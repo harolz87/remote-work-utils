@@ -21,9 +21,9 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     overscroll-behavior: none;
     width: 100%;
-    background-image: url('public/images/background.svg');
+    background-image: url('src/assets/images/background.svg');
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: contain;
   }
 `;
