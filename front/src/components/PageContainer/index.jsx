@@ -1,23 +1,21 @@
 import React from 'react';
 import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import PropsType from 'prop-types';
 import { Wrapper } from './styles';
 
 export const PageContainer = ({ children }) => (
   <Wrapper>
-    <header>
-      <Nav activeKey="/home" onSelect={(selectedKey) => console.log(`selected ${selectedKey}`)}>
-        <Nav.Item>
-          <Nav.Link href="/">Home</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="apps">Applications</Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link href="check-in-out">Check in/out</Nav.Link>
-        </Nav.Item>
-      </Nav>
-    </header>
+    <Navbar bg="primary" expand="lg">
+      <Navbar.Brand href="/home" className="text-white font-weight-bold">RWU</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          <Nav.Link href="/apps" className="text-white">Apps</Nav.Link>
+          <Nav.Link href="/check-in-out" className="text-white">Check In/Out</Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
     {children}
     <footer>Footer</footer>
   </Wrapper>
