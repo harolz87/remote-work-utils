@@ -1,16 +1,16 @@
 import * as globalActions from './global.actions';
 
-import * as constans from '../constants/login.constants';
+import * as constants from '../constants/login.constants';
 
 export const changeUser = (text) => ({
-  type: constans.LOGIN_CHANGE_USER,
+  type: constants.LOGIN_CHANGE_USER,
   payload: {
     text,
   },
 });
 
 export const changePass = (text) => ({
-  type: constans.LOGIN_CHANGE_PASS,
+  type: constants.LOGIN_CHANGE_PASS,
   payload: {
     text,
   },

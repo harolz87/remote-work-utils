@@ -1,4 +1,4 @@
-import * as constans from '../constans/alert.constans';
+import * as constants from '../constants/alert.constants';
 
 const initialState = {
   show: false,
@@ -7,13 +7,13 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case constans.OPEN_ALERT:
+    case constants.OPEN_ALERT:
       return {
         ...state,
         show: true,
         dataAlert: action.payload.dataAlert,
       };
-    case constans.CLOSE_ALERT:
+    case constants.CLOSE_ALERT:
       return {
         ...state,
         show: false,
