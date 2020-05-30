@@ -2,7 +2,7 @@ import React from 'react';
 import PropsType from 'prop-types';
 import { useSelector } from 'react-redux';
 import { WrapperPageContainer } from '../components/WrapperPageContainer';
-import { Header } from '../components/Header';
+import { Header } from './Header';
 import { Footer } from '../components/Footer';
 
 export const PageContainer = ({ children }) => {

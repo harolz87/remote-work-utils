@@ -15,7 +15,7 @@ export default (state = initialState, action) => {
         isAuthenticated: true,
         token: action.payload.token,
       };
-    case constants.GLOBAL_SING_OFF:
+    case constants.GLOBAL_LOG_OFF:
       return {
         ...state,
         ...initialState,

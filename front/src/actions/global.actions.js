@@ -8,6 +8,6 @@ export const loggin = ({ user, token }) => ({
   },
 });
 
-export const singOff = () => ({
-  type: constants.GLOBAL_SING_OFF,
+export const logOff = () => ({
+  type: constants.GLOBAL_LOG_OFF,
 });
