@@ -1,7 +1,9 @@
 import React from 'react';
 import PropsType from 'prop-types';
 
-import { Form } from 'react-bootstrap';
+import Form from 'react-bootstrap/Form';
+import { Icon } from '../IconAwesome';
+import { WrapperControl } from './styles';
 
 export const Input = ({
   type,
@@ -9,15 +11,19 @@ export const Input = ({
   value,
   placeholder,
   onChange,
+  iconName,
 }) => (
   <Form.Group>
     <Form.Label>{label}</Form.Label>
-    <Form.Control
-      type={type}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-    />
+    <WrapperControl>
+      {iconName !== null && <Icon name={iconName} />}
+      <Form.Control
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+      />
+    </WrapperControl>
   </Form.Group>
 );
 
@@ -27,8 +33,10 @@ Input.propTypes = {
   value: PropsType.string.isRequired,
   placeholder: PropsType.string.isRequired,
   type: PropsType.string,
+  iconName: PropsType.string,
 };
 
 Input.defaultProps = {
   type: 'text',
+  iconName: null,
 };

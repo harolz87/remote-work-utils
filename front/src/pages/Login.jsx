@@ -36,6 +36,7 @@ const Login = ({ history }) => {
         label="Email address"
         placeholder="Email address"
         value={userName}
+        iconName="user"
         onChange={(event) => loginService.changeUser({ event, actions })}
       />
       <Input
@@ -43,6 +44,7 @@ const Login = ({ history }) => {
         label="Password"
         placeholder="Password"
         value={userPass}
+        iconName="key"
         onChange={(event) => loginService.changePass({ event, actions })}
       />
       <div className="d-flex justify-content-center my-5">

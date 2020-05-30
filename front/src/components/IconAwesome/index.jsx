@@ -4,6 +4,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEnvelope,
+  faUser,
+  faKey,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   WHITE_COLOR,
@@ -13,6 +15,8 @@ import {
 } from './styles';
 
 library.add(faEnvelope);
+library.add(faUser);
+library.add(faKey);
 
 export const Icon = ({
   name,
