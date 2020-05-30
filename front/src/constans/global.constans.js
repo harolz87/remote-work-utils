@@ -1,0 +1,2 @@
+export const GLOBAL_LOGIN = 'GLOBAL_LOGIN';
+export const GLOBAL_SING_OFF = 'GLOBAL_SING_OFF';
