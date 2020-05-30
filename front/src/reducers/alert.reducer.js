@@ -1,4 +1,4 @@
-import * as constans from '../constans/alert.constans';
+import * as constans from '../constants/alert.constants';
 
 const initialState = {
   show: false,

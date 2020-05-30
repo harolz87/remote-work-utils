@@ -1,4 +1,4 @@
-import * as constants from '../constans/global.constans';
+import * as constants from '../constants/global.constants';
 
 const initialState = {
   user: {},

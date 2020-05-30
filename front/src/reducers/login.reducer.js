@@ -1,4 +1,4 @@
-import * as constans from '../constans/login.contans';
+import * as constants from '../constants/login.constants';
 
 const initialState = {
   userName: '',
@@ -7,12 +7,12 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
-    case constans.LOGIN_CHANGE_USER:
+    case constants.LOGIN_CHANGE_USER:
       return {
         ...state,
         userName: action.payload.text,
       };
-    case constans.LOGIN_CHANGE_PASS:
+    case constants.LOGIN_CHANGE_PASS:
       return {
         ...state,
         userPass: action.payload.text,
