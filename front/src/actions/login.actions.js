@@ -26,5 +26,5 @@ export const login = (data, history) => (dispatch) => {
       token: 'adsa sdasdadsasdasdasdasdasd',
     }));
     history.push('./');
-  }, 3000);
+  }, 1000);
 };
