@@ -4,6 +4,7 @@ import PropsType from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import { Icon } from '../IconAwesome';
 import { WrapperControl } from './styles';
+import { BLACK_COLOR } from '../../config/colors';
 
 export const Input = ({
   type,
@@ -16,7 +17,7 @@ export const Input = ({
   <Form.Group>
     <Form.Label>{label}</Form.Label>
     <WrapperControl>
-      {iconName !== null && <Icon name={iconName} />}
+      {iconName !== null && <Icon name={iconName} color={BLACK_COLOR} />}
       <Form.Control
         type={type}
         placeholder={placeholder}
