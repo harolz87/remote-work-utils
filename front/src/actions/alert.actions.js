@@ -1,4 +1,4 @@
-import * as constants from '../constans/alert.constans';
+import * as constants from '../constants/alert.constants';
 
 export const openAlert = (dataAlert) => ({
   type: constants.OPEN_ALERT,
