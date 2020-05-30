@@ -1,6 +1,7 @@
 
 export const login = ({
   event,
+  history,
   actions,
   userName,
   userPass,
@@ -26,7 +27,13 @@ export const login = ({
         },
       ],
     });
+    return;
   }
+
+  actions.login({
+    user: userName,
+    password: userPass,
+  }, history);
 };
 
 export const changeUser = ({

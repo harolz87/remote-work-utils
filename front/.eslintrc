@@ -8,6 +8,7 @@
       "no-shadow": "off",
       "import/prefer-default-export": "off",
       "react/no-array-index-key": "off",
+      "react/jsx-props-no-spreading" : "off",
       "react/jsx-filename-extension": [
         1,
         {

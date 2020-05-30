@@ -16,14 +16,15 @@ export const changePass = (text) => ({
   },
 });
 
-export const login = (data) => (dispatch) => {
+export const login = (data, history) => (dispatch) => {
   setTimeout(() => {
     dispatch(globalActions.loggin({
       user: {
         id: 123123,
-        name: '',
+        name: data.userName,
       },
       token: 'adsa sdasdadsasdasdasdasdasd',
     }));
+    history.push('./');
   }, 3000);
 };

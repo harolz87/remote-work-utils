@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { useActions } from '../hooks/useActions';
 
@@ -15,7 +16,7 @@ const newloginActions = {
   openAlert,
 };
 
-const Login = () => {
+const Login = ({ history }) => {
   const userName = useSelector((state) => state.login.userName);
   const userPass = useSelector((state) => state.login.userPass);
   const actions = useActions(newloginActions);
@@ -23,10 +24,12 @@ const Login = () => {
   return (
     <FormLogin onSubmit={(event) => loginService.login({
       event,
+      history,
       actions,
       userName,
       userPass,
-    })}>
+    })}
+    >
       <Input
         type="text"
         label="User name"
@@ -46,6 +49,10 @@ const Login = () => {
       </SummitButton>
     </FormLogin>
   );
+};
+
+Login.propTypes = {
+  history: PropTypes.objectOf(PropTypes.any).isRequired,
 };
 
 export default Login;

@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { PageContainer } from 'Components/PageContainer';
 
+import PrivateRoute from './PrivateRoute';
+
 const Login = React.lazy(() => import('../pages/Login'));
 const Home = React.lazy(() => import('../pages/Home'));
 const Apps = React.lazy(() => import('../pages/Applications'));
@@ -11,10 +13,10 @@ export const Routes = () => (
   <PageContainer>
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" from component={Home} />
+        <PrivateRoute exact path="/" from component={Home} />
         <Route exact path="/login" from component={Login} />
-        <Route exact path="/apps" from component={Apps} />
-        <Route exact path="/check-in-out" from component={CheckInOut} />
+        <PrivateRoute exact path="/apps" from component={Apps} />
+        <PrivateRoute exact path="/check-in-out" from component={CheckInOut} />
       </Switch>
     </BrowserRouter>
   </PageContainer>
