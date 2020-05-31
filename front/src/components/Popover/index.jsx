@@ -4,7 +4,7 @@ import Overlay from 'react-bootstrap/Overlay';
 import PopoverBst from 'react-bootstrap/Popover';
 import { Icon } from '../IconAwesome';
 import {
-  BLACK_COLOR,
+  WHITE_COLOR,
 } from '../../config/colors';
 
 export const Popover = ({
@@ -23,12 +23,12 @@ export const Popover = ({
     container={container}
   >
     <PopoverBst>
-      <PopoverBst.Title as="h3" className="d-flex flex-row bd-highlight mb-3">
+      <PopoverBst.Title as="h3" className="d-flex align-items-center justify-content-between bd-highlight bg-primary text-white">
         {title}
         <Icon
           name="times-circle"
           onClick={onClose}
-          color={BLACK_COLOR}
+          color={WHITE_COLOR}
         />
       </PopoverBst.Title>
       <PopoverBst.Content>
