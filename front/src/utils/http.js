@@ -12,6 +12,15 @@ export const request = ({
 }) => {
   const { dispatch } = getStore().store;
 
+  console.log(' getStore().store.getState().global',  getStore().store.getState().global);
+  
+
+  const userId = getStore().store.getState().global.user.id;
+
+  const query = (params === undefined) ? {} : params;
+
+  query.userId = userId;
+  
   dispatch(loadActions.openLoading());
 
   const url = `${API}/${endPoint}`;
@@ -19,12 +28,14 @@ export const request = ({
   const axiosParams = {
     method,
     url,
-    params,
+    params: query,
     json: true,
   };
 
   if (method !== 'get') {
     axiosParams.data = data;
+    axiosParams.data.userId = userId;
+    console.log(' axiosParams.data', axiosParams.data);
   }
 
   return new Promise((resolve, reject) => {

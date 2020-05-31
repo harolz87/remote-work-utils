@@ -14,8 +14,8 @@ export const login = (data, history) => (dispatch) => {
     endPoint: 'users/login/',
   }).then((response) => {
     dispatch(globalActions.loggin({
-      user: response.user,
-      token: response.access_token,
+      user: response.data.user,
+      token: response.data.access_token,
     }));
     history.push('./');
   });
