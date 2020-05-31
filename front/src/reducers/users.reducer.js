@@ -65,6 +65,7 @@ export default (state = initialState, action) => {
           ...state.regs,
           action.payload.user,
         ],
+        showUser: false,
       };
     default:
       return state;

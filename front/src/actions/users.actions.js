@@ -21,7 +21,7 @@ const loadUsers = (regs) => ({
 });
 
 export const getUsers = () => (dispatch) => {
- /* http.request({
+  /* http.request({
     method: 'get',
     endPoint: 'login',
   }).then(() => {
@@ -51,7 +51,7 @@ export const getUsers = () => (dispatch) => {
         apps: ['zoom', 'trello'],
       },
     ]));
-  });*/
+  }); */
   dispatch(loadUsers([
     {
       name: 'Diego Reyes',
@@ -103,18 +103,13 @@ const addUserArray = (user) => ({
   },
 });
 
-export const addUser = () => (dispatch) => {
+export const addUser = (user) => (dispatch) => {
+  dispatch(addUserArray(user));
+  return;
   http.request({
     method: 'get',
     endPoint: 'addUser',
   }).then(() => {
-    dispatch(addUserArray([
-      {
-        name: 'Diego Reyes',
-        title: 'Frontend Developer',
-        schedule: '12:00pm to 8:00pm',
-        apps: ['zoom', 'trello', 'slack'],
-      },
-    ]));
+    dispatch(addUserArray(user));
   });
 };
