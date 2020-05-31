@@ -4,7 +4,7 @@ import Image from 'react-bootstrap/Image';
 import { CardWrapper, CardFooter, ImageWrapper } from './styles';
 import { DropdownSplit } from '../Dropdown';
 import { Popover } from '../Popover';
-import graphic from '../../assets/images/graphic.png';
+import graphic from '../../assets/images/graphic.jpg';
 
 
 export const AppsCard = ({ name, appKey, text, options }) => {
