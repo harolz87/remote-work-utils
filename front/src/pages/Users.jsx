@@ -43,7 +43,7 @@ const Applications = () => {
             title="New collaborator"
             target={targetRef.current}
             container={containerRef.current}
-            placement="right"
+            placement="right-start"
             onClose={() => usersService.closeAddUser({ actions })}
           >
             <AddCollaboratorForm />
