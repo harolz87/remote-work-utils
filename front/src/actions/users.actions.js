@@ -1,5 +1,6 @@
 import * as constants from '../constants/users.constants';
 import * as http from '../utils/http';
+import { changeText } from '../utils/actionChangeText';
 
 export const openAddUser = ({ edit }) => ({
   type: constants.USERS_OPEN_ADD_USER,
@@ -52,3 +53,11 @@ export const getUsers = () => (dispatch) => {
     ]));
   });
 };
+
+export const changeName = changeText(constants.USERS_CHANGE_NAME);
+
+export const changeEmail = changeText(constants.USERS_CHANGE_EMAIL);
+
+export const changeTitle = changeText(constants.USERS_CHANGE_TITLE);
+
+export const changeSchedule = changeText(constants.USERS_CHANGE_SCHEDULE);

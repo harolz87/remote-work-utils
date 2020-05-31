@@ -1,6 +1,11 @@
 import React from 'react';
 import { Image, Row, Col, Button } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 import { Input } from '../components/Input';
+
+import { useActions } from '../hooks/useActions';
+import * as usersActions from '../actions/users.actions';
+import * as usersService from '../services/users.service';
 
 const applicationsCollection = [
   { name: 'Trello', src: 'src/assets/images/trello.png' },
@@ -10,7 +15,14 @@ const applicationsCollection = [
   { name: 'Zoom', src: 'src/assets/images/zoom.png' },
 ];
 
-const AddCollaborator = () => (
+const AddCollaborator = () => {
+  const userName = useSelector((state) => state.users.userName);
+  const userEmail = useSelector((state) => state.users.userEmail);
+  const userTitle = useSelector((state) => state.users.userTitle);
+  const userSchedule = useSelector((state) => state.users.userSchedule);
+  const actions = useActions(usersActions);
+
+  return (
   <div style={{ height: '600px', width: '800px' }}>
     <div className="h-100 w-100 d-flex flex-column">
       <div className="border-bottom" style={{ display: 'grid', gridTemplateColumns: '180px auto' }}>
@@ -20,18 +32,18 @@ const AddCollaborator = () => (
         <div style={{ margin: '30px' }}>
           <div className="d-flex">
             <div className="w-100 pr-3">
-              <Input label="Name" placeholder="Name" />
+              <Input label="Name" placeholder="Name" value={userName} onChange={(event) => usersService.changeName({ event, actions })} />
             </div>
             <div className="w-100">
-              <Input label="Email" placeholder="Email" />
+              <Input label="Email" placeholder="Email" value={userEmail} onChange={(event) => usersService.changeEmail({ event, actions })} />
             </div>
           </div>
           <div className="d-flex">
             <div className="w-100 pr-3">
-              <Input label="Title" placeholder="Title" />
+              <Input label="Title" placeholder="Title" value={userTitle} onChange={(event) => usersService.changeTitle({ event, actions })} />
             </div>
             <div className="w-100">
-              <Input label="Schedule" placeholder="Mon-Fri 8:00am - 5:00pm" />
+              <Input label="Schedule" placeholder="Mon-Fri 8:00am - 5:00pm" value={userSchedule} onChange={(event) => usersService.changeSchedule({ event, actions })} />
             </div>
           </div>
         </div>
@@ -62,4 +74,5 @@ const AddCollaborator = () => (
     </div>
   </div>
 );
+          }
 export default AddCollaborator;
