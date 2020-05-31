@@ -33,7 +33,7 @@ const AddCollaborator = () => {
   const actions = useActions(newUsersActions);
 
   return (
-    <div style={{ height: '600px', width: '800px' }}>
+    <div style={{ height: '450px', width: '800px' }}>
       <Form onSubmit={(event) => usersService.postUser({
         event,
         actions,
@@ -70,13 +70,13 @@ const AddCollaborator = () => {
           </div>
           <div>
             <Row style={{ paddingTop: '25px', paddingBottom: '25px' }}>
-              <Col>Select the applications to assign to your collaborator</Col>
+              <Col> <p  style={{ color: '#777777'}}><b> Select the applications to assign to your collaborator</b></p></Col>
             </Row>
-            <div className="d-flex justify-content-between" style={{ paddingTop: '25px', paddingBottom: '25px' }}>
+            <div className="d-flex justify-content-around" style={{ paddingTop: '0', paddingBottom: '25px' }}>
               {applicationsCollection.map((app) => (
                 <div className="d-flex flex-column align-items-center">
-                  <div style={{ height: '75px', width: '75px' }}>
-                    <Image src={app.src} alt={app.name} width="75px" />
+                  <div style={{ height: '50px', width: '50px', marginBottom: '10px' }}  >
+                    <Image src={app.src} alt={app.name} width="50px" />
                   </div>
                   <input
                     type="checkbox"
@@ -87,7 +87,7 @@ const AddCollaborator = () => {
                 </div>
               ))}
             </div>
-            <Row style={{ paddingTop: '25px', paddingBottom: '25px' }}>
+            <Row style={{ paddingTop: '0', paddingBottom: '25px' }}>
               <Col>
                 <div className="d-flex justify-content-end">
                   <div className="w-25 mr-3"><Button className="w-100" variant="outline-secondary">Cancel</Button></div>
