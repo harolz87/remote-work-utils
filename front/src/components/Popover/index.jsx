@@ -15,6 +15,7 @@ export const Popover = ({
   title,
   children,
   onClose,
+  width,
 }) => (
   <Overlay
     show={show}
@@ -22,7 +23,7 @@ export const Popover = ({
     placement={placement}
     container={container}
   >
-    <PopoverBst>
+    <PopoverBst style={{ minWidth: width }}>
       <PopoverBst.Title as="h3" className="d-flex flex-row bd-highlight mb-3">
         {title}
         <Icon
@@ -46,9 +47,11 @@ Popover.propTypes = {
   target: PropTypes.node.isRequired,
   container: PropTypes.node.isRequired,
   onClose: PropTypes.func.isRequired,
+  width: PropTypes.string,
 };
 
 
 Popover.defaultProps = {
   placement: 'bottom',
+  width: '200px',
 };

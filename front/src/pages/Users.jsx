@@ -45,6 +45,7 @@ const Applications = () => {
             container={containerRef.current}
             placement="right"
             onClose={() => usersService.closeAddUser({ actions })}
+            width="830px"
           >
             <AddCollaboratorForm />
           </Popover>
