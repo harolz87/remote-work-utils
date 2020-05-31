@@ -3,6 +3,7 @@ import * as constants from '../constants/users.constants';
 const initialState = {
   showUser: false,
   edit: false,
+  regs: [],
 };
 
 export default (state = initialState, action) => {
@@ -18,6 +19,11 @@ export default (state = initialState, action) => {
         ...state,
         showUser: false,
         edit: false,
+      };
+    case constants.USERS_LOAD_USERS:
+      return {
+        ...state,
+        regs: action.payload.regs,
       };
     default:
       return state;

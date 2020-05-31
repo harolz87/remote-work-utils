@@ -5,3 +5,7 @@ export const openAddUser = ({
 export const closeAddUser = ({
   actions,
 }) => actions.closeAddUser();
+
+export const getUsers = ({
+  actions,
+}) => actions.getUsers();

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -11,24 +11,15 @@ import * as usersActions from '../actions/users.actions';
 import * as usersService from '../services/users.service';
 import AddCollaboratorForm from './AddCollaboratorForm';
 
-const usersCollection = [];
-
-for (let i = 0; i < 3; i += 1) {
-  usersCollection[i] = [
-    [
-      <Col sm={6} lg={4}><UserCards /></Col>,
-      <Col sm={6} lg={4}><UserCards /></Col>,
-      <Col sm={6} lg={4}><UserCards disabled /></Col>,
-      <Col sm={6} lg={4}><UserCards /></Col>,
-    ],
-  ];
-}
-
 const Applications = () => {
   const showUser = useSelector((state) => state.users.showUser);
+  const usersCollection = useSelector((state) => state.users.regs);
   const containerRef = useRef(null);
   const targetRef = useRef(null);
   const actions = useActions(usersActions);
+  useEffect(() => {
+    usersService.getUsers({ actions });
+  }, []);
 
   return (
     <div style={{ margin: '0px 1rem' }} ref={containerRef}>
@@ -49,7 +40,9 @@ const Applications = () => {
           >
             <AddCollaboratorForm />
           </Popover>
-          {usersCollection.map((userList) => userList)}
+          {usersCollection.map((user) => (
+            <Col sm={6} lg={4}><UserCards /></Col>
+          ))}
         </Row>
       </Container>
     </div>
