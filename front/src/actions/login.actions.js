@@ -11,7 +11,7 @@ export const login = (data, history) => (dispatch) => {
   http.request({
     data,
     method: 'post',
-    endPoint: 'users/login',
+    endPoint: 'users/login/',
   }).then((response) => {
     dispatch(globalActions.loggin({
       user: response.user,
