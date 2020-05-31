@@ -1,10 +1,8 @@
 import React from 'react';
-import { Icon } from 'Components/IconAwesome';
 
 const Home = () => (
   <div>
-    Home 
-    <Icon name="envelope" />
+    Home
   </div>
 );
 export default Home;

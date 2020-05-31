@@ -9,8 +9,7 @@ import { Popover } from '../components/Popover';
 import { useActions } from '../hooks/useActions';
 import * as usersActions from '../actions/users.actions';
 import * as usersService from '../services/users.service';
-
-import Test from './Test'; // form user
+import AddCollaboratorForm from './AddCollaboratorForm';
 
 const usersCollection = [];
 
@@ -41,13 +40,13 @@ const Applications = () => {
           />
           <Popover
             show={showUser}
-            title="Add user"
+            title="New collaborator"
             target={targetRef.current}
             container={containerRef.current}
             placement="right"
             onClose={() => usersService.closeAddUser({ actions })}
           >
-            <Test />
+            <AddCollaboratorForm />
           </Popover>
           {usersCollection.map((userList) => userList)}
         </Row>
