@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
-import Button from 'react-bootstrap/Button';
 import { useActions } from '../hooks/useActions';
 
 import { FormLogin } from '../components/FormLogin';
@@ -49,9 +48,6 @@ const Login = ({ history }) => {
         <SummitButton className="w-50">
           Login
         </SummitButton>
-        <Button variant="link" onClick={() => history.push('/register')}>
-          register
-        </Button>
       </div>
     </FormLogin>
   );
