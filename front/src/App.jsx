@@ -7,6 +7,7 @@ import { GlobalStyles } from './styles/GlobalStyles';
 import reducers from './reducers';
 import getStore from './store/getStore';
 import { Alert } from './containers/Alert';
+import { Load } from './containers/Load';
 
 
 const { store, persistor } = getStore({ reducers });
@@ -18,6 +19,7 @@ export default () => (
         <GlobalStyles />
         <Routes />
         <Alert />
+        <Load />
       </Suspense>
     </PersistGate>
 
