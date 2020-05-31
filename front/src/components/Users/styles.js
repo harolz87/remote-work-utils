@@ -7,6 +7,7 @@ export const CardWrapper = styled.div`
   border-radius: 10px;
   box-shadow: 0px 3px 9px #2B75B56E;
   margin-top: 50px;
+  ${(props) => (props.clickable ? 'cursor: pointer;' : '')}
 `;
 
 export const CardFooter = styled.div`
@@ -17,9 +18,9 @@ export const CardFooter = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
-  width: 40%;
+  width: 150px;
+  height: 150px;
   box-shadow: 0px 3px 16px #0069C338;
-  border: 1px solid #707070;
   border-radius: 100%;
   ${(props) => (props.disabled ? `
     filter: grayscale(100%);
