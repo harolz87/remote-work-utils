@@ -31,4 +31,9 @@ export const GlobalStyles = createGlobalStyle`
   p{
     font-size: 13px
   }
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
 `;
