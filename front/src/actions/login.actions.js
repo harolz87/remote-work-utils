@@ -1,6 +1,6 @@
 import * as globalActions from './global.actions';
-
 import * as constants from '../constants/login.constants';
+import * as http from '../utils/http';
 
 export const changeUser = (text) => ({
   type: constants.LOGIN_CHANGE_USER,
@@ -17,7 +17,11 @@ export const changePass = (text) => ({
 });
 
 export const login = (data, history) => (dispatch) => {
-  setTimeout(() => {
+  http.request({
+    data,
+    method: 'post',
+    endPoint: 'login',
+  }).then((_) => {
     dispatch(globalActions.loggin({
       user: {
         id: 123123,
@@ -26,5 +30,5 @@ export const login = (data, history) => (dispatch) => {
       token: 'adsa sdasdadsasdasdasdasdasd',
     }));
     history.push('./');
-  }, 1000);
+  });
 };
