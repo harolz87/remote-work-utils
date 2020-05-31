@@ -23,6 +23,7 @@ export const ImageWrapper = styled.div`
   height: 92px;
   box-shadow: 0px 3px 16px #0069C338;
   border-radius: 100%;
+  overflow: hidden;
   ${(props) => (props.disabled ? `
     filter: grayscale(100%);
     opacity: 0.7;

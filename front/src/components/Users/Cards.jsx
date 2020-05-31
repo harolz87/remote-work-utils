@@ -4,11 +4,11 @@ import PropsType from 'prop-types';
 import Image from 'react-bootstrap/Image';
 import { CardWrapper, CardFooter, ImageWrapper, Paragraph, ParagraphTitle, AppsCircles } from './styles';
 
-export const UserCards = ({ name, title, schedule, disabled, apps }) => (
+export const UserCards = ({ name, title, schedule, disabled, apps, index }) => (
   <CardWrapper>
     <div className="h-75 d-flex flex-column align-items-center justify-content-center">
       <ImageWrapper disabled={disabled}>
-        <Image src="src/assets/images/user-icon.svg" rounded />
+        <Image src={`src/assets/images/user-pics/${index === 0 ? '0.svg' : `${index > 10 ? Math.ceil(index / 10) : index}.jpg`}`} width="92px" />
       </ImageWrapper>
       <ParagraphTitle>{name}</ParagraphTitle>
       <p>{title}</p>
@@ -46,6 +46,7 @@ UserCards.propTypes = {
   schedule: PropsType.string,
   disabled: PropsType.bool,
   apps: PropsType.arrayOf(PropsType.string),
+  index: PropsType.number,
 };
 
 UserCards.defaultProps = {
@@ -54,4 +55,5 @@ UserCards.defaultProps = {
   schedule: '12:00pm to 5:00pm',
   disabled: false,
   apps: [],
+  number: 0,
 };

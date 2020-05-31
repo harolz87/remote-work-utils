@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { UserCards } from 'Components/Users/Cards';
 import { AddUserCard } from 'Components/Users/AddUserCard';
 import { Popover } from '../components/Popover';
@@ -40,8 +39,8 @@ const Applications = () => {
           >
             <AddCollaboratorForm />
           </Popover>
-          {usersCollection.map((user) => (
-            <UserCards {...user} />
+          {usersCollection.map((user, i) => (
+            <UserCards {...user} index={i} />
           ))}
         </Row>
       </Container>
