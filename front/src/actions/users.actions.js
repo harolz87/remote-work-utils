@@ -69,3 +69,26 @@ export const checkApp = ({ appName, value }) => ({
     value,
   },
 });
+
+const addUserArray = (user) => ({
+  type: constants.USERS_ADD_USER,
+  payload: {
+    user,
+  },
+});
+
+export const addUser = () => (dispatch) => {
+  http.request({
+    method: 'get',
+    endPoint: 'addUser',
+  }).then(() => {
+    dispatch(addUserArray([
+      {
+        name: 'Diego Reyes',
+        title: 'Frontend Developer',
+        schedule: '12:00pm to 8:00pm',
+        apps: ['zoom', 'trello', 'slack'],
+      },
+    ]));
+  });
+};

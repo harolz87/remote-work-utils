@@ -11,14 +11,11 @@ export const login = (data, history) => (dispatch) => {
   http.request({
     data,
     method: 'post',
-    endPoint: 'login',
-  }).then((_) => {
+    endPoint: 'users/login',
+  }).then((response) => {
     dispatch(globalActions.loggin({
-      user: {
-        id: 123123,
-        name: data.userName,
-      },
-      token: 'adsa sdasdadsasdasdasdasdasd',
+      user: response.user,
+      token: response.access_token,
     }));
     history.push('./');
   });

@@ -21,7 +21,6 @@ export const request = ({
     url,
     params,
     json: true,
-    withCredentials: true,
   };
 
   if (method !== 'get') {
@@ -29,9 +28,6 @@ export const request = ({
   }
 
   return new Promise((resolve, reject) => {
-    resolve();
-    dispatch(loadActions.closeLoading());
-    /*
     axios(axiosParams)
       .then((resolve))
       .catch((error) => {
@@ -49,6 +45,5 @@ export const request = ({
           dispatch(loadActions.closeLoading());
         }, 300);
       });
-      */
   });
 };

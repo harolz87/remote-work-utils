@@ -38,3 +38,11 @@ export const checkApp = ({
   value: event.target.value,
   appName,
 });
+
+export const postUser = ({
+  event,
+  appName,
+  actions,
+}) => {
+
+}

@@ -58,6 +58,14 @@ export default (state = initialState, action) => {
           [action.payload.appName]: action.payload.value,
         },
       };
+    case constants.USERS_ADD_USER:
+      return {
+        ...state,
+        regs: [
+          ...state.regs,
+          action.payload.user,
+        ],
+      };
     default:
       return state;
   }

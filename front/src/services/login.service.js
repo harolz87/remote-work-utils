@@ -31,7 +31,7 @@ export const login = ({
   }
 
   actions.login({
-    user: userName,
+    email: userName,
     password: userPass,
   }, history);
 };
