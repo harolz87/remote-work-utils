@@ -127,6 +127,56 @@ export const getUsers = () => (dispatch) => {
       schedule: '13:00pm to 9:00pm',
       apps: ['zoom', 'trello'],
     },
+    {
+      name: 'Carla Rodriguez',
+      title: 'Frontend Developer',
+      schedule: '12:00pm to 8:00pm',
+      apps: ['zoom', 'trello', 'slack'],
+    },
+    {
+      name: 'Maria Federino',
+      title: 'UX/UI Designer',
+      schedule: '11:00pm to 7:00pm',
+      apps: ['zoom', 'github'],
+    },
+    {
+      name: 'Pancho Melean',
+      title: 'DevOps Engineer',
+      schedule: '10:00pm to 6:00pm',
+      apps: ['zoom', 'github', 'slack'],
+    },
+    {
+      name: 'Luisa Gonzales',
+      title: 'Backend Developer',
+      schedule: '13:00pm to 9:00pm',
+      apps: ['zoom', 'trello'],
+    },
+    {
+      name: 'Sonia Rodriguez',
+      title: 'Frontend Developer',
+      schedule: '12:00pm to 8:00pm',
+      apps: ['zoom', 'trello', 'slack'],
+      disabled: true,
+    },
+    {
+      name: 'Alexa Siri',
+      title: 'UX/UI Designer',
+      schedule: '11:00pm to 7:00pm',
+      apps: ['zoom', 'github'],
+    },
+    {
+      name: 'Elon Musk',
+      title: 'DevOps Engineer',
+      schedule: '10:00pm to 6:00pm',
+      apps: ['zoom', 'github', 'slack'],
+      disabled: true,
+    },
+    {
+      name: 'Minerva Gonzales',
+      title: 'Backend Developer',
+      schedule: '13:00pm to 9:00pm',
+      apps: ['zoom', 'trello'],
+    },
   ]));
 };
 
