@@ -1,10 +1,11 @@
 /* eslint-disable object-curly-newline */
 import React from 'react';
+import PropsType from 'prop-types';
 import Image from 'react-bootstrap/Image';
 import { CardWrapper, CardFooter, ImageWrapper } from './styles';
 
-export const AddUserCard = () => (
-  <CardWrapper clickable>
+export const AddUserCard = React.forwardRef(({ onClick }, ref) => (
+  <CardWrapper clickable ref={ref} onClick={onClick}>
     <div className="h-75 d-flex flex-column align-items-center justify-content-center">
       <ImageWrapper disabled>
         <Image style={{ height: '150px' }} src="src/assets/images/add.svg" rounded />
@@ -28,4 +29,8 @@ export const AddUserCard = () => (
       </div>
     </CardFooter>
   </CardWrapper>
-);
+));
+
+AddUserCard.propTypes = {
+  onClick: PropsType.func.isRequired,
+};

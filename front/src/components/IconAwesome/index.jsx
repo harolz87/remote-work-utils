@@ -7,6 +7,7 @@ import {
   faUser,
   faKey,
   faSignOutAlt,
+  faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   WHITE_COLOR,
@@ -19,6 +20,7 @@ library.add(faEnvelope);
 library.add(faUser);
 library.add(faKey);
 library.add(faSignOutAlt);
+library.add(faTimesCircle);
 
 export const Icon = ({
   name,
@@ -48,7 +50,7 @@ Icon.propTypes = {
 
 
 Icon.defaultProps = {
-  size: '25px',
+  size: '1x',
   onClick: null,
   color: WHITE_COLOR,
 };
