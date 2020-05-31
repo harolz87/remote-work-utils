@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import background from '../assets/images/background.svg';
+
 export const GlobalStyles = createGlobalStyle`
   html {
     box-sizing: border-box;
@@ -21,7 +23,7 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0 auto;
     overscroll-behavior: none;
     width: 100%;
-    background-image: url('src/assets/images/background.svg');
+    background-image: url(${background});
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: contain;

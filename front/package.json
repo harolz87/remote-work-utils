@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./webpack/webpack.dev.config.js"
+    "start": "webpack-dev-server --config ./webpack/webpack.dev.config.js",
+    "build": "webpack --config ./webpack/webpack.prod.config.js"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +26,9 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
+    "html-webpack-plugin": "^4.3.0",
     "style-loader": "^1.2.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
