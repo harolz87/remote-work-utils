@@ -2,5 +2,7 @@
 
 
 User for testing: 
-test@login.com
-123456
+
+Email: test@login.com
+
+Password: 123456
