@@ -39,9 +39,13 @@ export const ParagraphTitle = styled(Paragraph)`
 `;
 
 export const AppsCircles = styled.div`
-  border-radius:50px;
-  background-color: ${(props) => (props.disabled ? '#c4c4c4' : '#0163cc')};
+  display: flex;
+  border-radius: 50px;
   height:22px;
   width:22px;
   margin-right:5px;
+  ${(props) => (props.disabled ? `
+    filter: grayscale(100%);
+    opacity: 0.3;
+  ` : '')}
 `;
