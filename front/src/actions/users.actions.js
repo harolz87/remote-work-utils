@@ -21,7 +21,7 @@ const loadUsers = (regs) => ({
 });
 
 export const getUsers = () => (dispatch) => {
-  http.request({
+  /* http.request({
     method: 'get',
     endPoint: 'login',
   }).then(() => {
@@ -101,7 +101,33 @@ export const getUsers = () => (dispatch) => {
         apps: ['zoom', 'trello'],
       },
     ]));
-  });
+  }); */
+  dispatch(loadUsers([
+    {
+      name: 'Diego Reyes',
+      title: 'Frontend Developer',
+      schedule: '12:00pm to 8:00pm',
+      apps: ['zoom', 'trello', 'slack'],
+    },
+    {
+      name: 'Juan Jose Pelaez',
+      title: 'UX/UI Designer',
+      schedule: '11:00pm to 7:00pm',
+      apps: ['zoom', 'github'],
+    },
+    {
+      name: 'Harol Zuluaga',
+      title: 'DevOps Engineer',
+      schedule: '10:00pm to 6:00pm',
+      apps: ['zoom', 'github', 'slack'],
+    },
+    {
+      name: 'Juan Esteban Marquez',
+      title: 'Backend Developer',
+      schedule: '13:00pm to 9:00pm',
+      apps: ['zoom', 'trello'],
+    },
+  ]));
 };
 
 export const changeName = changeText(constants.USERS_CHANGE_NAME);
@@ -127,18 +153,13 @@ const addUserArray = (user) => ({
   },
 });
 
-export const addUser = () => (dispatch) => {
+export const addUser = (user) => (dispatch) => {
+  dispatch(addUserArray(user));
+  return;
   http.request({
     method: 'get',
     endPoint: 'addUser',
   }).then(() => {
-    dispatch(addUserArray([
-      {
-        name: 'Diego Reyes',
-        title: 'Frontend Developer',
-        schedule: '12:00pm to 8:00pm',
-        apps: ['zoom', 'trello', 'slack'],
-      },
-    ]));
+    dispatch(addUserArray(user));
   });
 };

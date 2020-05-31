@@ -1,4 +1,3 @@
-/* eslint-disable object-curly-newline */
 import React from 'react';
 import PropsType from 'prop-types';
 import Image from 'react-bootstrap/Image';

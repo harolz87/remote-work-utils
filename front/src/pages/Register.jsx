@@ -7,60 +7,71 @@ import { FormLogin } from '../components/FormLogin';
 import { Input } from '../components/Input';
 import { SummitButton } from '../components/SummitButton';
 
-import * as loginActions from '../actions/login.actions';
+import * as registerActions from '../actions/register.actions';
 import { openAlert } from '../actions/alert.actions';
-import * as loginService from '../services/login.service';
+import * as registerService from '../services/register.service';
 
-const newloginActions = {
-  ...loginActions,
+const newRegisterActions = {
+  ...registerActions,
   openAlert,
 };
 
 const Login = ({ history }) => {
-  const userName = useSelector((state) => state.login.userName);
-  const userPass = useSelector((state) => state.login.userPass);
-  const actions = useActions(newloginActions);
+  const userName = useSelector((state) => state.register.userName);
+  const userPhone = useSelector((state) => state.register.userPhone);
+  const userEmail = useSelector((state) => state.register.userEmail);
+  const userPass = useSelector((state) => state.register.userPass);
+  const userConfirmPass = useSelector((state) => state.register.userConfirmPass);
+  const actions = useActions(newRegisterActions);
 
   return (
     <FormLogin
-      onSubmit={(event) => loginService.login({
+      onSubmit={(event) => registerService.register({
         event,
         history,
         actions,
         userName,
+        userPhone,
+        userEmail,
         userPass,
+        userConfirmPass,
       })}
       isRegisterForm
     >
       <Input
         type="text"
-        label="Name"
-        placeholder="Name"
+        label="User Name"
+        placeholder="User Name"
         value={userName}
+        onChange={(event) => registerService.changeUser({ event, actions })}
       />
       <Input
-        type="text"
+        type="number"
         label="Phone number"
         placeholder="Phone number"
-        value={userName}
+        value={userPhone}
+        onChange={(event) => registerService.changePhone({ event, actions })}
       />
       <Input
-        type="text"
+        type="email"
         label="Email address"
         placeholder="Email address"
-        value={userName}
+        value={userEmail}
+        onChange={(event) => registerService.changeEmail({ event, actions })}
       />
       <Input
         type="password"
         label="Password"
         placeholder="Password"
         value={userPass}
+        onChange={(event) => registerService.changePass({ event, actions })}
       />
       <Input
         type="password"
         label="Confirm Password"
         placeholder="Confirm Password"
-        value={userPass}
+        value={userConfirmPass}
+        onChange={(event) => registerService.changeComfirmPass({ event, actions })}
       />
       <div className="d-flex justify-content-center my-4">
         <SummitButton className="w-50">

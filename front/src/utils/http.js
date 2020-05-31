@@ -29,11 +29,11 @@ export const request = ({
 
   return new Promise((resolve, reject) => {
     axios(axiosParams)
-      .then((resolve))
+      .then(((resolve)))
       .catch((error) => {
         dispatch(alertActions.openAlert({
           type: 'error',
-          body: 'error',
+          body: 'an error occurred',
           buttons: [{
             label: 'ok',
           }],

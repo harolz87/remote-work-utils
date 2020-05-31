@@ -23,7 +23,7 @@ export const Popover = ({
     placement={placement}
     container={container}
   >
-    <PopoverBst style={{ minWidth: width }}>
+    <PopoverBst style={{ minWidth: width, zIndex: 10 }}>
       <PopoverBst.Title as="h3" className="d-flex align-items-center justify-content-between bd-highlight bg-primary text-white">
         {title}
         <Icon
