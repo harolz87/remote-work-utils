@@ -6,9 +6,9 @@ import {
   Form,
 } from './styles';
 
-export const FormLogin = ({ children, onSubmit }) => (
-  <Wrapper>
-    <Form onSubmit={onSubmit}>
+export const FormLogin = ({ children, onSubmit, isRegisterForm }) => (
+  <Wrapper isRegisterForm={isRegisterForm}>
+    <Form isRegisterForm={isRegisterForm} onSubmit={onSubmit}>
       {children}
     </Form>
   </Wrapper>
@@ -17,4 +17,9 @@ export const FormLogin = ({ children, onSubmit }) => (
 FormLogin.propTypes = {
   children: PropsType.node.isRequired,
   onSubmit: PropsType.func.isRequired,
+  isRegisterForm: PropsType.bool,
+};
+
+FormLogin.defaultProps = {
+  isRegisterForm: false,
 };
