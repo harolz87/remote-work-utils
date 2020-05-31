@@ -7,7 +7,7 @@ export const UserCards = ({ name, title, schedule, disabled, apps, index }) => (
   <CardWrapper>
     <div className="h-75 d-flex flex-column align-items-center justify-content-center">
       <ImageWrapper disabled={disabled}>
-        <Image src={`src/assets/images/user-pics/${index === 0 ? '0.svg' : `${index > 10 ? index - 10 : index}.jpg`}`} width="92px" />
+        <Image src={`src/assets/images/user-pics/${index > 10 ? index - 10 : index}.jpg`} width="92px" />
       </ImageWrapper>
       <ParagraphTitle>{name}</ParagraphTitle>
       <p>{title}</p>
@@ -20,16 +20,16 @@ export const UserCards = ({ name, title, schedule, disabled, apps, index }) => (
       <div className="d-flex flex-column justify-content-center text-white">
         <Paragraph>Apps</Paragraph>
         <div className=" d-flex  justify-content-between">
-          <AppsCircles disabled={apps.includes('trello')}>
+          <AppsCircles disabled={disabled || apps.includes('trello')}>
             <Image src="src/assets/images/trello.png" width="22px" />
           </AppsCircles>
-          <AppsCircles disabled={apps.includes('slack')}>
+          <AppsCircles disabled={disabled || apps.includes('slack')}>
             <Image src="src/assets/images/slack.png" width="22px" />
           </AppsCircles>
-          <AppsCircles disabled={apps.includes('github')}>
+          <AppsCircles disabled={disabled || apps.includes('github')}>
             <Image src="src/assets/images/github.png" width="22px" />
           </AppsCircles>
-          <AppsCircles disabled={apps.includes('zoom')}>
+          <AppsCircles disabled={disabled || apps.includes('zoom')}>
             <Image src="src/assets/images/zoom.png" width="22px" />
           </AppsCircles>
 
@@ -54,5 +54,5 @@ UserCards.defaultProps = {
   schedule: '12:00pm to 5:00pm',
   disabled: false,
   apps: [],
-  number: 0,
+  index: 0,
 };
