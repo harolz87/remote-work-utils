@@ -8,6 +8,7 @@ const initialState = {
   userEmail: '',
   userTitle: '',
   userSchedule: '',
+  userApps: {},
 };
 
 export default (state = initialState, action) => {
@@ -48,6 +49,14 @@ export default (state = initialState, action) => {
       return {
         ...state,
         userSchedule: action.payload.text,
+      };
+    case constants.USERS_CHECK_APP:
+      return {
+        ...state,
+        userApps: {
+          ...state.userApps,
+          [action.payload.appName]: action.payload.value,
+        },
       };
     default:
       return state;

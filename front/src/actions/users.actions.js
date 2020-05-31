@@ -61,3 +61,11 @@ export const changeEmail = changeText(constants.USERS_CHANGE_EMAIL);
 export const changeTitle = changeText(constants.USERS_CHANGE_TITLE);
 
 export const changeSchedule = changeText(constants.USERS_CHANGE_SCHEDULE);
+
+export const checkApp = ({ appName, value }) => ({
+  type: constants.USERS_CHECK_APP,
+  payload: {
+    appName,
+    value,
+  },
+});

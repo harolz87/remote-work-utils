@@ -29,3 +29,12 @@ export const changeSchedule = ({
   event,
   actions,
 }) => actions.changeSchedule(event.target.value);
+
+export const checkApp = ({
+  event,
+  appName,
+  actions,
+}) => actions.checkApp({
+  value: event.target.value,
+  appName,
+});
