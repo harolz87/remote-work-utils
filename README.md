@@ -5,4 +5,4 @@ User for testing:
 
 Email: test@login.com
 
-Password: 123456
+Password: 12345678.
