@@ -26,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
     background-image: url(${background});
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: contain;
+    background-size: cover;
   }
   p{
     font-size: 13px
