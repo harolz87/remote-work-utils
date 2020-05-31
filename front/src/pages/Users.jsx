@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { UserCards } from 'Components/Users/Cards';
+import { AddUserCard } from 'Components/Users/AddUserCard';
 
 const usersCollection = [];
 
@@ -20,7 +21,10 @@ for (let i = 0; i < 3; i += 1) {
 const Applications = () => (
   <div style={{ margin: '0px 1rem' }}>
     <Container fluid>
-      <Row>{usersCollection.map((userList) => userList)}</Row>
+      <Row>
+        <AddUserCard />
+        {usersCollection.map((userList) => userList)}
+      </Row>
     </Container>
   </div>
 );
