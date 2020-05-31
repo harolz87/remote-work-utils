@@ -9,11 +9,10 @@ const usersCollection = [];
 for (let i = 0; i < 3; i += 1) {
   usersCollection[i] = [
     [
-      <Col sm><UserCards /></Col>,
-      <Col sm><UserCards /></Col>,
-      <Col sm><UserCards disabled /></Col>,
-      <Col sm><UserCards /></Col>,
-      <Col sm><UserCards disabled /></Col>,
+      <Col sm={6} lg={4}><UserCards /></Col>,
+      <Col sm={6} lg={4}><UserCards /></Col>,
+      <Col sm={6} lg={4}><UserCards disabled /></Col>,
+      <Col sm={6} lg={4}><UserCards /></Col>,
     ],
   ];
 }
@@ -21,7 +20,7 @@ for (let i = 0; i < 3; i += 1) {
 const Applications = () => (
   <div style={{ margin: '0px 1rem' }}>
     <Container fluid>
-      {usersCollection.map((userList) => <Row>{userList}</Row>)}
+      <Row>{usersCollection.map((userList) => userList)}</Row>
     </Container>
   </div>
 );
