@@ -6,8 +6,8 @@ export const CardWrapper = styled.div`
   background: #FFFFFF ;
   border-radius: 6px;
   box-shadow: 0px 3px 9px #2B75B56E;
-  margin-top: 50px;
-  margin-right:5px;
+  margin-top: 20px;
+  margin-right:15px;
   ${(props) => (props.clickable ? 'cursor: pointer;' : '')}
 `;
 

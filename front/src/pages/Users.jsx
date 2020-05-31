@@ -16,10 +16,10 @@ const usersCollection = [];
 for (let i = 0; i < 3; i += 1) {
   usersCollection[i] = [
     [
-      <Col sm={6} lg={4}><UserCards /></Col>,
-      <Col sm={6} lg={4}><UserCards /></Col>,
-      <Col sm={6} lg={4}><UserCards disabled /></Col>,
-      <Col sm={6} lg={4}><UserCards /></Col>,
+      <UserCards />,
+      <UserCards />,
+      <UserCards disabled />,
+      <UserCards />,
     ],
   ];
 }
@@ -33,7 +33,7 @@ const Applications = () => {
   return (
     <div style={{ margin: '0px 1rem' }} ref={containerRef}>
       <Container fluid>
-        <Row>
+        <Row className="justify-content-center">
           <AddUserCard
             ref={targetRef}
             onClick={() => usersService.openAddUser({ actions })}
