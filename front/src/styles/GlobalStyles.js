@@ -28,4 +28,7 @@ export const GlobalStyles = createGlobalStyle`
     background-attachment: fixed;
     background-size: contain;
   }
+  p{
+    font-size: 13px
+  }
 `;

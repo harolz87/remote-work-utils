@@ -2,7 +2,7 @@
 import React from 'react';
 import PropsType from 'prop-types';
 import Image from 'react-bootstrap/Image';
-import { CardWrapper, CardFooter, ImageWrapper } from './styles';
+import { CardWrapper, CardFooter, ImageWrapper, Paragraph, ParagraphTitle, AppsCircles } from './styles';
 
 export const UserCards = ({ name, title, schedule, disabled }) => (
   <CardWrapper>
@@ -10,17 +10,23 @@ export const UserCards = ({ name, title, schedule, disabled }) => (
       <ImageWrapper disabled={disabled}>
         <Image src="src/assets/images/user-icon.svg" rounded />
       </ImageWrapper>
-      <h5>{name}</h5>
+      <ParagraphTitle>{name}</ParagraphTitle>
       <p>{title}</p>
     </div>
     <CardFooter disabled={disabled}>
       <div className="d-flex flex-column justify-content-center text-white px-3">
-        <h5>Schedule</h5>
+        <Paragraph>Schedule</Paragraph>
         <p className="p-0">{schedule}</p>
       </div>
       <div className="d-flex flex-column justify-content-center text-white">
-        <h5>Apps</h5>
-        <p>.</p>
+        <Paragraph>Apps</Paragraph>
+        <div className=" d-flex  justify-content-between">
+          <AppsCircles disabled={disabled} />
+          <AppsCircles disabled={disabled} />
+          <AppsCircles disabled={disabled} />
+          <AppsCircles disabled={disabled} />
+
+        </div>
       </div>
     </CardFooter>
   </CardWrapper>
