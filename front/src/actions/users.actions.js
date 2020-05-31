@@ -23,25 +23,31 @@ export const getUsers = () => (dispatch) => {
   http.request({
     method: 'get',
     endPoint: 'login',
-  }).then((response) => {
+  }).then(() => {
     dispatch(loadUsers([
       {
-        name: 'nombre',
+        name: 'Diego Reyes',
+        title: 'Frontend Developer',
+        schedule: '12:00pm to 8:00pm',
+        apps: ['zoom', 'trello', 'slack'],
       },
       {
-        name: 'nombre',
+        name: 'Juan Jose Pelaez',
+        title: 'UX/UI Designer',
+        schedule: '11:00pm to 7:00pm',
+        apps: ['zoom', 'github'],
       },
       {
-        name: 'nombre',
+        name: 'Harol Zuluaga',
+        title: 'DevOps Engineer',
+        schedule: '10:00pm to 6:00pm',
+        apps: ['zoom', 'github', 'slack'],
       },
       {
-        name: 'nombre',
-      },
-      {
-        name: 'nombre',
-      },
-      {
-        name: 'nombre',
+        name: 'Juan Esteban Marquez',
+        title: 'Backend Developer',
+        schedule: '13:00pm to 9:00pm',
+        apps: ['zoom', 'trello'],
       },
     ]));
   });

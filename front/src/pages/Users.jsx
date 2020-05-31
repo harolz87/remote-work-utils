@@ -41,7 +41,7 @@ const Applications = () => {
             <AddCollaboratorForm />
           </Popover>
           {usersCollection.map((user) => (
-            <Col sm={6} lg={4}><UserCards /></Col>
+            <UserCards {...user} />
           ))}
         </Row>
       </Container>
