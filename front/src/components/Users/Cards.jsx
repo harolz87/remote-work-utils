@@ -7,7 +7,7 @@ export const UserCards = ({ name, title, schedule, disabled, apps, index }) => (
   <CardWrapper>
     <div className="h-75 d-flex flex-column align-items-center justify-content-center">
       <ImageWrapper disabled={disabled}>
-        <Image src={`src/assets/images/user-pics/${index === 0 ? '0.svg' : `${index > 10 ? Math.ceil(index / 10) : index}.jpg`}`} width="92px" />
+        <Image src={`src/assets/images/user-pics/${index === 0 ? '0.svg' : `${index > 10 ? index - 10 : index}.jpg`}`} width="92px" />
       </ImageWrapper>
       <ParagraphTitle>{name}</ParagraphTitle>
       <p>{title}</p>
