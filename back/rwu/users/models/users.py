@@ -29,6 +29,8 @@ class User(RwuModel, AbstractUser):
     )
     phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)
 
+    # title = models.CharField("Title", max_length=50, blank=True)
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
 

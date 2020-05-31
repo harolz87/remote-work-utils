@@ -27,11 +27,8 @@ class UserModelSerializer(serializers.ModelSerializer):
 
         model = User
         fields = (
+            'id',
             'username',
-            'first_name',
-            'last_name',
-            'email',
-            'phone_number',
         )
 
 
@@ -96,8 +93,8 @@ class UserLoginSerializer(serializers.Serializer):
         user = authenticate(username=data['email'], password=data['password'])
         if not user:
             raise serializers.ValidationError('Invalid credentials')
-        if not user.is_verified:
-            raise serializers.ValidationError('Account is not active yet :(')
+        # if not user.is_verified:
+        #     raise serializers.ValidationError('Account is not active yet :(')
         self.context['user'] = user
         return data
 

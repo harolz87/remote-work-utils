@@ -5,7 +5,7 @@ from .base import env
 
 # Base
 SECRET_KEY = env('DJANGO_SECRET_KEY')
-ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['comparteride.com'])
+ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['rwu.com'])
 
 # Databases
 DATABASES['default'] = env.db('DATABASE_URL')  # NOQA
@@ -69,7 +69,7 @@ DEFAULT_FROM_EMAIL = env(
     default='Comparte Ride <noreply@comparteride.com>'
 )
 SERVER_EMAIL = env('DJANGO_SERVER_EMAIL', default=DEFAULT_FROM_EMAIL)
-EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[Comparte Ride]')
+EMAIL_SUBJECT_PREFIX = env('DJANGO_EMAIL_SUBJECT_PREFIX', default='[Remote work utils]')
 
 # Admin
 ADMIN_URL = env('DJANGO_ADMIN_URL')

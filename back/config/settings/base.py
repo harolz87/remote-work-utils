@@ -46,6 +46,7 @@ DJANGO_APPS = [
 THIRD_PARTY_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
 ]
 LOCAL_APPS = [
     'rwu.users.apps.UsersAppConfig',
@@ -79,6 +80,7 @@ AUTH_PASSWORD_VALIDATORS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -155,3 +157,22 @@ CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 CELERYD_TASK_TIME_LIMIT = 5 * 60
 CELERYD_TASK_SOFT_TIME_LIMIT = 60
+
+CORS_ORIGIN_WHITELIST = [
+    "https://example.com",
+    "https://sub.example.com",
+    "http://localhost:8080",
+    "http://localhost:8000",
+    "http://localhost:3000",
+    "http://127.0.0.1:8000",
+    "http://127.0.0.1:3000"
+]
+
+CORS_ALLOW_METHODS = [
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+]
