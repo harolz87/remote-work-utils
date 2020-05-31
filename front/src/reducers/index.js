@@ -4,6 +4,7 @@ import login from './login.reducer';
 import alert from './alert.reducer';
 import users from './users.reducer';
 import load from './load.reducer';
+import register from './register.reducer';
 
 export default combineReducers({
   global,
@@ -11,4 +12,5 @@ export default combineReducers({
   alert,
   users,
   load,
+  register,
 });

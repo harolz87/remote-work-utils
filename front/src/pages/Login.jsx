@@ -49,8 +49,8 @@ const Login = ({ history }) => {
         <SummitButton className="w-50">
           Login
         </SummitButton>
-        <Button variant="link" className="">
-          Forgot password?
+        <Button variant="link" onClick={() => history.push('/register')}>
+          register
         </Button>
       </div>
     </FormLogin>
