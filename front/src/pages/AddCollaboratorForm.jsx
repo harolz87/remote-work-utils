@@ -90,7 +90,7 @@ const AddCollaborator = () => {
             <Row style={{ paddingTop: '0', paddingBottom: '25px' }}>
               <Col>
                 <div className="d-flex justify-content-end">
-                  <div className="w-25 mr-3"><Button className="w-100" variant="outline-secondary">Cancel</Button></div>
+                  <div className="w-25 mr-3"><Button className="w-100" variant="outline-secondary" onClick={() => actions.closeAddUser()}>Cancel</Button></div>
                   <div className="w-25"><SummitButton className="w-100">Add collaborator</SummitButton></div>
                 </div>
               </Col>
