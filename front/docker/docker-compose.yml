@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: rwu_front
+    ports:
+      - "3232:80"
