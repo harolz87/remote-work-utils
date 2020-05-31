@@ -24,7 +24,7 @@ const Applications = () => {
   return (
     <div style={{ margin: '0px 1rem' }} ref={containerRef}>
       <Container fluid>
-        <Row>
+        <Row className="justify-content-center">
           <AddUserCard
             ref={targetRef}
             onClick={() => usersService.openAddUser({ actions })}

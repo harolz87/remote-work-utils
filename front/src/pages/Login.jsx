@@ -45,11 +45,11 @@ const Login = ({ history }) => {
         value={userPass}
         onChange={(event) => loginService.changePass({ event, actions })}
       />
-      <div className="d-flex justify-content-center my-5">
-        <SummitButton className="w-25">
+      <div className="d-flex justify-content-center my-4">
+        <SummitButton className="w-50">
           Login
         </SummitButton>
-        <Button variant="link" className="w-25">
+        <Button variant="link" className="">
           Forgot password?
         </Button>
       </div>
