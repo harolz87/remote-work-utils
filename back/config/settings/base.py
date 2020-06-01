@@ -50,6 +50,7 @@ THIRD_PARTY_APPS = [
 ]
 LOCAL_APPS = [
     'rwu.users.apps.UsersAppConfig',
+    'rwu.employees.apps.EmployeesAppConfig',
 ]
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
